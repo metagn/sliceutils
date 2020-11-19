@@ -2,15 +2,8 @@
 
 import macros, typetraits
 
-type
-  NamedTuple* = concept type T
-    ## Concept type of a named tuple. Not used in this module.
-    T is tuple
-    isNamedTuple(T)
-  UnnamedTuple* = concept type T
-    ## Concept type of an unnamed tuple. Not used in this module.
-    T is tuple
-    not isNamedTuple(T)
+when not declared(tupleLen):
+  template tupleLen(T): untyped = arity(T)
 
 template `[]`*[T: tuple](t: T, i: static BackwardsIndex): auto =
   ## A redefinition of tuple indexing with the index argument made to be static.
