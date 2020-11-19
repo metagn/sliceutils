@@ -16,3 +16,5 @@ Nimble package for extensions on Slice/HSlice. Features include:
   - `spans(HSlice[T, U], V) -> bool`: alias for `system.contains` as `contains` in this package means "is one of the given values of an iteration"
 
 `import sliceutils` imports all of these modules.
+
+Warning: This package overuses the type system a bit and breaks very easily for versions below 1.4.0. Even on 1.4.0, you may discover bugs that come from Nim itself.
