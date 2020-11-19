@@ -14,20 +14,18 @@ proc until*[T, U](a: T, b: U): UntilSlice[T, U] {.inline.} =
   ## marginally below `b`.
   a .. Until[U](val: b)
 
-proc `<`*[T, U](a: T, b: Until[U]): bool {.inline.} =
-  ## Alias for ``a < b.val``.
-  a < b.val
-
-proc `<=`*[T, U](a: T, b: Until[U]): bool {.inline.} =
-  ## Resolves to ``a < b.val``, meaning the true value of `b` is excluded.
-  a < b.val
-
 iterator items*[T, U](s: UntilSlice[T, U]): auto =
+  ## Iterates over ``items(s.a .. s.b.val)`` and yields all the values that are not equal to ``s.b.val``.
   for x in items(s.a .. s.b.val):
     if x != s.b.val:
       yield x
 
+proc contains*[T, U, V](s: UntilSlice[T, U], x: V): bool =
+  ## Checks that `x` is not equal to ``s.b.val``, then checks if ``s.a .. s.b.val`` contains `x`.
+  x != s.b.val and contains(s.a .. s.b.val, x)
+
 proc len*[T, U](s: UntilSlice[T, U]): int =
+  ## Returns the value of ``len(s.a .. s.b.val)`` and subtracts 1 if ``s.b.val`` is in ``s.a .. s.b.val``. 
   let dummy = s.a .. s.b.val
   result = dummy.len
   if s.b.val in dummy:
