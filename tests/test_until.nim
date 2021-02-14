@@ -1,4 +1,7 @@
-import unittest
+when (compiles do: import nimbleutils/bridge):
+  import nimbleutils/bridge
+else:
+  import unittest
 
 import sliceutils/until
 

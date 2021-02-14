@@ -14,9 +14,10 @@ Nimble package for extensions on Slice/HSlice. Features include:
   - `sort(Slice[T]) -> Slice[T]`: gives the bounds ascending order
   - `span(HSlice[T, U]) -> int`: alias for `system.len` as `len` in this package means "number of results of an iteration"
   - `spans(HSlice[T, U], V) -> bool`: alias for `system.contains` as `contains` in this package means "is one of the given values of an iteration"
+  - `@(HSlice[T, U]) -> seq`: makes seq from slice, iterations must match `len`
 
 `import sliceutils` imports all of these modules.
 
 Uses [nimbleutils](https://github.com/hlaaftana/nimbleutils) to build docs and run tests for multiple backends.
 
-Warning: This package overuses the type system a bit and breaks very easily for versions below 1.4.0. Even on 1.4.0, you may discover bugs that come from Nim itself.
+Warning: This package overuses the type system a bit and breaks very easily for versions below 1.4.0. Even on 1.4.0, you may come across Nim bugs.

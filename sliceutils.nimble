@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.1"
+version       = "0.1.2"
 author        = "hlaaftana"
 description   = "utils for Slice/HSlice"
 license       = "MIT"
@@ -21,6 +21,6 @@ task docs, "build docs for all modules":
 
 task tests, "run tests for multiple backends":
   when declared(runTests):
-    runTests(backends = {c, js})
+    runTests(backends = {c, #[js, nims]#})
   else:
     echo "tests task not implemented, need nimbleutils"
