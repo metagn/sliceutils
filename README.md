@@ -15,6 +15,7 @@ Nimble package for extensions on Slice/HSlice. Features include:
   - `span(HSlice[T, U]) -> int`: alias for `system.len` as `len` in this package means "number of results of an iteration"
   - `spans(HSlice[T, U], V) -> bool`: alias for `system.contains` as `contains` in this package means "is one of the given values of an iteration"
   - `@(HSlice[T, U]) -> seq`: makes seq from slice, iterations must match `len`
+* `multislice`: sorted, minimalized sequence of `Slice[T]`
 
 `import sliceutils` imports all of these modules.
 
