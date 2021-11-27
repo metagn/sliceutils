@@ -1,2 +1,2 @@
-import sliceutils/[tuples, intslices, general, strides, until, multislice]
-export tuples, intslices, general, strides, until, multislice
+import sliceutils/[tuples, intslices, general, strides, until]
+export tuples, intslices, general, strides, until

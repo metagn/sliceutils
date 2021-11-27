@@ -18,6 +18,22 @@ func until*[T, U](a: T, b: U): UntilSlice[T, U] {.inline.} =
   ## marginally below `b`.
   a .. until(b)
 
+func `<`*[T](a: T, b: Until[T]): bool {.inline.} =
+  ## Alias for `a < b.val`.
+  a < b.val
+
+func `<=`*[T](a: T, b: Until[T]): bool {.inline.} =
+  ## Alias for `a < b.val`.
+  a < b.val
+
+func `==`*[T](a: T, b: Until[T]): bool {.inline.} =
+  ## Equality operator for `Until` and the base type. Always `false`.
+  false
+
+func `==`*[T](a: Until[T], b: T): bool {.inline.} =
+  ## Equality operator for `Until` and the base type. Always `false`.
+  false
+
 iterator items*[T, U](s: UntilSlice[T, U]): auto {.noSideEffect.} =
   ## Iterates over ``items(s.a .. s.b.val)`` and yields all the values that are not equal to ``s.b.val``.
   for x in items(s.a .. s.b.val):
