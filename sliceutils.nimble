@@ -1,7 +1,7 @@
 # Package
 
 version       = "0.2.1"
-author        = "hlaaftana"
+author        = "metagn"
 description   = "utils for Slice/HSlice"
 license       = "MIT"
 srcDir        = "src"
@@ -15,7 +15,7 @@ when (compiles do: import nimbleutils):
 
 task docs, "build docs for all modules":
   when declared(buildDocs):
-    buildDocs(gitUrl = "https://github.com/hlaaftana/sliceutils")
+    buildDocs(gitUrl = "https://github.com/metagn/sliceutils")
   else:
     echo "docs task not implemented, need nimbleutils"
 

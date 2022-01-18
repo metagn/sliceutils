@@ -18,6 +18,6 @@ Nimble package for extensions on Slice/HSlice. Features include:
 
 `import sliceutils` imports all of these modules.
 
-Uses [nimbleutils](https://github.com/hlaaftana/nimbleutils) to build docs and run tests for multiple backends.
+Uses [nimbleutils](https://github.com/metagn/nimbleutils) to build docs and run tests for multiple backends.
 
 Warning: This package overuses the type system a bit and breaks very easily for versions below 1.4.0. Even on 1.4.0, you may come across Nim bugs.
