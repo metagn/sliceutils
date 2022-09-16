@@ -3,7 +3,7 @@
 import macros, typetraits
 
 when not declared(tupleLen):
-  template tupleLen(T): untyped = arity(T)
+  template tupleLen(T): untyped = arity(type(T))
 
 template `[]`*[T: tuple](t: T, i: static BackwardsIndex): auto =
   ## A redefinition of tuple indexing with the index argument made to be static.
