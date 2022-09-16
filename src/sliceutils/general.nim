@@ -21,7 +21,7 @@ func sort*[T](s: Slice[T]): Slice[T] {.inline.} =
   else:
     s
 
-iterator pairs*[T, U](s: HSlice[T, U]): (int, auto) {.noSideEffect.} =
+iterator pairs*[T, U](s: HSlice[T, U]): auto {.noSideEffect.} =
   ## Returns ``(int, typeof(s.items, typeOfIter))``, where the first element of the tuple is the count of iterations before.
   ## Only needs an ``items`` iterator defined on `s`.
   var i = 0
